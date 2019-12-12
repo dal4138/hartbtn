@@ -11,7 +11,7 @@ public class ThemeData implements Serializable {
     private String overView;
     private long mapX;
     private long mapY;
-
+    private boolean hart=false;
     private Integer contentsID;
 
     public Integer getContentsID() {
@@ -20,6 +20,14 @@ public class ThemeData implements Serializable {
 
     public void setContentsID(Integer contentsID) {
         this.contentsID = contentsID;
+    }
+
+    public boolean isHart() {
+        return hart;
+    }
+
+    public void setHart(boolean hart) {
+        this.hart = hart;
     }
 
     public String getTel() {

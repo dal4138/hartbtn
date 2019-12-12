@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,7 +70,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
         holder.txtView.setText(list.get(position).getTitle());
 
@@ -131,11 +132,23 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.MyViewHolder
 
             }
         });
+        holder.imagebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(list.get(position).isHart()){
+                    holder.imagebtn.setImageResource(R.drawable.ic_favorite_border_black_24dp);
+                    list.get(position).setHart(false);
+                }else{
+                    holder.imagebtn.setImageResource(R.drawable.ic_favorite_black_24dp);
+                    list.get(position).setHart(true);
+                }
+            }
+        });
 
 
 //        Uri uri = Uri.parse(item.get(position).getFirstImage());
 //        holder.imgView.setImageURI(uri);
-//        holder.txtView.setText(item.get(position).getTitle());
+
 
     }
 
@@ -150,12 +163,14 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.MyViewHolder
       //  public ImageView imgView;
         public TextView txtView;
         public ImageView imgView;
+        public ImageView imagebtn;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             txtView = itemView.findViewById(R.id.txtView);
             imgView = itemView.findViewById(R.id.imgView);
+            imagebtn = itemView.findViewById(R.id.imagebtn);
 
             // rootView = itemView;
 

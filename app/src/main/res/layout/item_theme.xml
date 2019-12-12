@@ -17,11 +17,9 @@
         android:layout_height="200dp"
         card_view:cardCornerRadius="20dp"
         card_view:cardUseCompatPadding="true">
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imgView"
@@ -34,15 +32,24 @@
                 app:riv_corner_radius_top_right="20dp"
                 app:riv_mutate_background="true"
                 app:riv_oval="false" />
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:id="@+id/imagebtn"
+                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
 
             <TextView
+                android:layout_alignParentBottom="true"
                 android:id="@+id/txtView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="0.1"
                 android:text="RoundedImageView + CardView 예제" />
-        </LinearLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>
